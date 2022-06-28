@@ -1,0 +1,691 @@
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&family=Prompt:wght@300;400;600;700&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans';
+        }
+        
+        body {
+            background-color: #eceff1;
+        }
+        /* H E A D E R */
+        
+        .contenedor-header {
+            background-color: #ff5d55;
+            border-bottom: 2px solid #424242;
+        }
+        
+        .contenedor-header .logo,
+        .contenedor-header nav,
+        .contenedor-header .info-contacto {
+            max-width: 260px;
+            width: 100%;
+            ;
+        }
+        
+        .contenedor-header .logo a {
+            text-decoration: none;
+            color: #fff;
+        }
+        
+        .contenedor-header .logo h1 {
+            font-size: 26px;
+            line-height: 26px;
+        }
+        
+        .contenedor-header .logo p {
+            font-size: 14px;
+        }
+        
+        .contenedor-header nav {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .contenedor-header .info-contacto {
+            text-align: right;
+        }
+        
+        .contenedor-header .info-contacto a {
+            color: #fff;
+            padding: 5px;
+        }
+        
+        .contenedor-header .info-contacto span {
+            margin-left: 10px;
+        }
+        
+        .contenedor-header header {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            color: #fff;
+        }
+        
+        .contenedor-header nav a {
+            font-size: 14px;
+            padding: 5px 15px;
+            color: #fff;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: .5s;
+            border-radius: 50px;
+        }
+        
+        .contenedor-header nav a:hover {
+            background-color: #e53935;
+            font-size: 14px;
+            color: #fff;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+        /* H O M E */
+        
+        .home {
+            background: url(img/fondo.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
+            background-repeat: no-repeat;
+            width: 100%;
+        }
+        /* BARRA DE B U S Q U E D A*/
+        
+        .pos-inferior {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .pos-centrada {
+            margin: 30px auto;
+        }
+        
+        .box-buscar-propiedades {
+            width: 900px;
+            max-width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px;
+            bottom: 100px;
+        }
+        
+        .box-buscar-propiedades .box-interior {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .box-buscar-propiedades .box-interior p {
+            color: #424242;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .box-buscar-propiedades .box-interior select {
+            width: 180px;
+            background-color: #eee;
+            color: #131313;
+            border: 1px solid #424242;
+            padding: 7px;
+            margin: 0 10px;
+            font-size: 12px;
+        }
+        
+        .box-buscar-propiedades .box-interior input[type=submit] {
+            width: 150px;
+            padding: 7px;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #ff5d55;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: .5s;
+        }
+        
+        .box-buscar-propiedades .box-interior input[type=submit]:hover {
+            background-color: #e53935;
+        }
+        
+        .box-buscar-propiedades .box-interior input[type=radio] {
+            font-size: 14px;
+        }
+        
+        .box-buscar-propiedades .box-interior .estado {
+            width: 180px;
+            background-color: #eee;
+            color: #131313;
+            border: 1px solid #424242;
+            padding: 7px;
+            margin: 0 10px;
+            font-size: 12px;
+            display: inline-block;
+        }
+        
+        .box-buscar-propiedades .box-interior .estado span {
+            margin: 0 7px;
+        }
+        /* P R O P I E D A D E S */
+        
+        .page-propiedades .contenedor-propiedades {
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        .page-propiedades .fila {
+            display: flex;
+            justify-content: space-between;
+            margin: 25px 0;
+        }
+        
+        .page-propiedades .contenedor-propiedad {
+            width: 380px;
+            background-color: #fff;
+            box-shadow: 2px 2px 3px #424242;
+            scale: 1;
+            transition: transform .5s;
+        }
+        
+        .page-propiedades .contenedor-propiedad:hover {
+            transform: scale(1.05);
+        }
+        
+        .page-propiedades .contenedor-propiedad .contenedor-img {
+            width: 100%;
+            position: relative;
+        }
+        
+        .page-propiedades .contenedor-propiedad .contenedor-img .estado {
+            width: 100%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ff5d55;
+            width: auto;
+            color: #fff;
+            padding: 5px 10px;
+        }
+        
+        .page-propiedades .contenedor-propiedad .contenedor-img img {
+            object-fit: cover;
+            width: 100%;
+            height: 400px;
+        }
+        
+        .page-propiedades .contenedor-propiedad .info {
+            padding: 0 10px;
+        }
+        
+        .page-propiedades .contenedor-propiedad h2 {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        
+        .page-propiedades .contenedor-propiedad p {
+            font-size: 14px;
+            color: #aaa;
+        }
+        
+        .page-propiedades .contenedor-propiedad p i {
+            color: #131313;
+            margin-right: 10px;
+        }
+        
+        .page-propiedades .contenedor-propiedad .precio {
+            display: inline-block;
+            font-size: 26px;
+            color: #ff5d55;
+            margin: 5px 0;
+        }
+        
+        .page-propiedades .contenedor-propiedad table {
+            width: 100%;
+            font-size: 14px;
+            text-align: left;
+            margin: 10px 0;
+        }
+        
+        .page-propiedades .contenedor-propiedad table td {
+            color: #aaa;
+        }
+        
+        .page-propiedades #botonCargarMas {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 15px;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #ff5d55;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: .5s;
+        }
+        
+        .page-propiedades #botonCargarMas:hover {
+            background-color: #e53935;
+        }
+        /* P U B L I C A C I O N */
+        
+        .page-publicacion .contenedor-principal {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .page-publicacion .contenedor-principal .info-publicacion {
+            width: 100%;
+            max-width: 850px;
+        }
+        
+        .page-publicacion .contenedor-principal .info-publicacion h2 {
+            margin-bottom: 7px;
+        }
+        
+        .page-publicacion .contenedor-principal .form-contacto {
+            width: 100%px;
+            max-width: 300px;
+        }
+        
+        .page-publicacion section {
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #aaa;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .page-publicacion .info-publicacion .dato1 {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .page-publicacion .info-publicacion .dato1 .precio {
+            display: inline-block;
+            font-size: 26px;
+            color: #ff5d55;
+            margin: 5px 0;
+            font-weight: bolder;
+        }
+        
+        .page-publicacion .info-publicacion .dato1 .estado {
+            display: inline-block;
+            background-color: #e53935;
+            color: #fff;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        
+        .page-publicacion .info-publicacion .contenedor-imagen-principal {
+            width: 100%;
+            margin-top: 15px;
+        }
+        
+        .page-publicacion .info-publicacion .contenedor-imagen-principal img {
+            width: 100%;
+        }
+        
+        .page-publicacion .info-publicacion .galeria {
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .page-publicacion .info-publicacion .galeria img {
+            width: 100%;
+            max-width: 240px;
+            object-fit: cover;
+            height: 154px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        
+        .page-publicacion .info-publicacion .descripcion .fila {
+            display: flex;
+            margin: 30px 0
+        }
+        
+        .page-publicacion .info-publicacion .descripcion .fila .dato {
+            width: 150px;
+            border-left: 5px solid #ff5d55;
+            padding-left: 10px;
+        }
+        
+        .page-publicacion .info-publicacion .descripcion .fila .dato span {
+            display: block;
+        }
+        
+        .page-publicacion .info-publicacion .descripcion .fila .dato .header {
+            font-size: 13px;
+            font-weight: bold;
+        }
+        
+        .page-publicacion .info-publicacion .descripcion .fila .dato .valor {
+            font-size: 13px;
+            color: #607d8b;
+        }
+        
+        .page-publicacion .info-publicacion .descripcion .detalle {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .page-publicacion .form-contacto-publicacion {
+            max-width: 320px;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #aaa;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        
+        .page-publicacion .form-contacto-publicacion h3 {
+            margin-bottom: 10px;
+        }
+        
+        .page-publicacion .form-contacto-publicacion label {
+            display: block;
+            width: 100%;
+            margin-bottom: 6px;
+            color: #607d8b;
+        }
+        
+        .page-publicacion .form-contacto-publicacion div {
+            margin-bottom: 15px;
+        }
+        
+        .page-publicacion .form-contacto-publicacion input,
+        .page-publicacion .form-contacto-publicacion textarea {
+            display: block;
+            width: 100%;
+            padding: 10px;
+        }
+        
+        .page-publicacion .compartir a {
+            font-size: 24px;
+            padding: 5px 0;
+            display: inline-block;
+            width: 60px;
+            background-color: #ff5d55;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            margin-right: 20px;
+            transition: .5s;
+        }
+        
+        .page-publicacion .compartir a:hover {
+            background-color: #e53935;
+        }
+        
+        .page-publicacion .compartir a .fa-whatsapp {
+            font-size: 30px;
+        }
+        
+        .page-publicacion .compartir h3 {
+            margin-bottom: 15px;
+        }
+        /* Ventana MODAL para las imagenes */
+        
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: hidden;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+        }
+        /* Modal Content/Box */
+        
+        .modal-content {
+            position: relative;
+            color: #000;
+            font-size: 16px;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #fefefe;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            max-width: 900px;
+            width: 100%;
+            /* Could be more or less, depending on screen size */
+            text-align: center;
+        }
+        
+        .modal-content #fotoModal {
+            width: 100%;
+        }
+        
+        .modal-content button {
+            font-size: 18px;
+            padding: 5px 10px;
+        }
+        
+        .modal-content span i {
+            font-size: 18px;
+            padding: 5px 15px;
+            margin: 0 10px;
+            background-color: #424242;
+            border-radius: 20px;
+            color: #aaa;
+            cursor: pointer;
+        }
+        
+        .modal-content span i:hover {
+            background-color: #000;
+            color: fff;
+        }
+        /* The Close Button */
+        
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            margin-top: -10px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* P U B L I C A C I O N */
+        
+        .page-busqueda .contenedor-busqueda {
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: #fff;
+            border: 1px solid #aaa;
+            padding: 0 25px;
+        }
+        
+        .page-busqueda .contenedor-busqueda h3 {
+            margin-top: 7px;
+            font-size: 16px;
+        }
+        
+        .page-busqueda .contenedor-busqueda h3 span {
+            font-weight: normal;
+            font-style: italic;
+        }
+        
+        .page-busqueda .resultado {
+            width: 100%;
+            background-color: #eee;
+            border: 1px solid #424242;
+            box-shadow: 2px 2px 3px #424242;
+            margin: 20px 0;
+            display: flex;
+            padding: 5px;
+            cursor: pointer;
+        }
+        
+        .page-busqueda .resultado .contenedor-imagen {
+            width: 100%;
+            max-width: 190px;
+            margin-right: 20px;
+        }
+        
+        .page-busqueda .resultado .contenedor-imagen img {
+            object-fit: cover;
+            width: 100%;
+            height: 135px;
+        }
+        
+        .page-busqueda .resultado .info {
+            width: 100%;
+        }
+        
+        .page-busqueda .resultado .info .titulo {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        
+        .page-busqueda .resultado .info .detalles {
+            margin: 10px 0;
+            display: flex;
+        }
+        
+        .page-busqueda .resultado .info .detalles .dato1 {
+            max-width: 140px;
+            width: 100%;
+            border-left: 6px solid #ff5d55;
+            padding-left: 5px;
+        }
+        
+        .page-busqueda .resultado .info .detalles .dato1 span {
+            display: block;
+        }
+        
+        .page-busqueda .resultado .info .detalles .dato1 .header {
+            font-weight: bold;
+            display: block;
+        }
+        
+        .page-busqueda .resultado .info .detalles .dato1 .header {
+            font-weight: bold;
+            color: #444;
+            display: block;
+            font-size: 14px;
+        }
+        
+        .page-busqueda .resultado .info .detalles .dato1 .texto {
+            font-size: 14px;
+            color: #607d8b;
+        }
+        /* P U B L I C A C I O N */
+        
+        .page-contacto .contenedor-contacto {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+        }
+        
+        .page-contacto .contenedor-contacto .col {
+            width: 32%;
+            background-color: #fff;
+            border: 1px solid #aaa;
+        }
+        
+        .page-contacto .contenedor-contacto .info {
+            padding: 15px;
+        }
+        
+        .page-contacto .contenedor-contacto .info div {
+            margin-bottom: 20px;
+        }
+        
+        .page-contacto .formulario {
+            padding: 15px;
+        }
+        
+        .page-contacto .formulario h3 {
+            margin-bottom: 10px;
+        }
+        
+        .page-contacto .formulario label {
+            display: block;
+            width: 100%;
+            margin-bottom: 6px;
+            color: #607d8b;
+        }
+        
+        .page-contacto .formulario div {
+            margin-bottom: 15px;
+        }
+        
+        .page-contacto .formulario input,
+        .page-contacto .formulario textarea {
+            display: block;
+            width: 100%;
+            padding: 10px;
+        }
+        /* FOOTER */
+        
+        footer {
+            width: 100%;
+            background-color: #131313;
+            color: #aaa;
+            text-align: center;
+            font-size: 12px;
+            padding: 5px 0;
+        }
+        
+        footer.inferior {
+            position: absolute;
+            bottom: 0;
+        }
+        /* S E C C I O N P A R A M O V I L */
+        
+        @media only screen and (max-width: 900px) {
+            .home .box-buscar-propiedades {
+                max-width: 500px;
+                width: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                padding: 8px;
+                margin: 0 10px;
+            }
+            .home .pos-inferior {
+                position: relative;
+                margin-top: 40vh;
+            }
+            .home .box-buscar-propiedades .box-interior select,
+            .home .box-buscar-propiedades .box-interior input[type=submit],
+            .home .box-buscar-propiedades .box-interior .estado {
+                width: 100%;
+                display: block;
+                margin-bottom: 10px;
+                margin-left: 0;
+            }
+        }

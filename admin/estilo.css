@@ -1,0 +1,738 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&family=Prompt:wght@300;400;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+
+/**************************************************************
+/************ L O G I N       *********************************/
+
+#contenedor-login {
+    height: 100vh;
+    background: linear-gradient(to right, rgb(43 13 96), #594594);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenedor-login .presentacion {
+    width: 1000px;
+    max-width: 1000px;
+    height: 550px;
+    display: flex;
+    border: 1px solid #c0c0c0;
+}
+
+#contenedor-login .presentacion .titulo {
+    width: 50%;
+    background: linear-gradient(to top, rgb(43 13 96), #594594);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+#contenedor-login .presentacion .titulo h1 {
+    font-size: 60px;
+}
+
+#contenedor-login .presentacion .titulo p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#contenedor-login .presentacion .contenedor-formulario {
+    width: 50%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contenedor-login .presentacion .contenedor-formulario .form-login {
+    width: 375px;
+    padding: 40px 20px;
+    border: 1px solid #c0c0c0;
+}
+
+#contenedor-login .presentacion .contenedor-formulario .form-login .input-login {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 7px;
+    border: 1px solid #c0c0c0;
+}
+
+#contenedor-login .presentacion .contenedor-formulario .form-login .btn {
+    display: block;
+    width: 100%;
+    border: none;
+    background-color: #6646d0;
+    padding: 7px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.msj-error-input {
+    font-size: 12px;
+    color: darkred;
+}
+
+
+/**************************************************************
+/*** ESTILO GENERALES DEL ADMIN     *********************************/
+
+html,
+body {
+    height: 100%;
+}
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    color: #2a117d;
+    background-color: #07abc1;
+    background-color: #e4e4e4;
+    position: fixed;
+    z-index: 99;
+    box-shadow: 0px 15px 10px -15px #111;
+}
+
+header h2 {
+    font-size: 14px;
+    font-style: italic;
+}
+
+#contenedor-admin {
+    width: 100%;
+    height: 100%;
+    background-color: #e6e6e6;
+}
+
+.contenedor-menu {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    width: 250px;
+    padding: 15px;
+    background-color: #2a117d;
+    color: #aaa;
+    height: 100%;
+}
+
+.contenedor-menu h2 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contenedor-menu nav ul {
+    list-style: none;
+}
+
+.contenedor-menu nav ul li {
+    padding-left: 15px;
+}
+
+.contenedor-menu nav ul li i {
+    font-size: 16px;
+    width: 16px !important;
+    color: rgb(238, 90, 11) !important;
+    margin-right: 5px !important;
+}
+
+.contenedor-menu nav ul hr {
+    margin: 7px 0;
+    border: none;
+    border-top: 1px solid;
+}
+
+.contenedor-menu nav ul li a {
+    display: inline-block;
+    width: 100%;
+    color: #aaa;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 7px 0;
+}
+
+.pagina-activa,
+.pagina-activa a {
+    background-color: #1a1a1a;
+    color: #fff !important;
+}
+
+.contenedor-menu nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.contenedor-principal {
+    position: relative;
+    height: 100%;
+    padding-top: 80px;
+    /*z-index: -99;*/
+    margin-left: 250px;
+}
+
+
+/**************************************************************
+/*** ESTILOS DEL DASHBOARD     *********************************/
+
+#dashboard {
+    background-color: #e6e6e6;
+    padding: 30px;
+    height: 100%;
+    width: 100%;
+}
+
+#dashboard>hr {
+    margin-bottom: 30px;
+}
+
+#dashboard .contenedor-cajas-info {
+    display: flex;
+    background-color: #fff;
+    padding: 40px 20px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+#dashboard .contenedor-cajas-info .caja-info {
+    background-color: #fff;
+    width: 200px;
+    border: 1px solid #aaa;
+    text-align: center;
+    color: #444;
+    margin-right: 30px;
+    box-shadow: 0px 15px 10px -15px #111;
+    transition: transform .5s;
+}
+
+#dashboard .contenedor-cajas-info .caja-info:hover {
+    transform: scale(1.1);
+}
+
+#dashboard .contenedor-cajas-info .caja-info p {
+    font-size: 13px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+#dashboard .contenedor-cajas-info .caja-info .dato {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+#dashboard .contenedor-cajas-info .caja-info a {
+    display: block;
+    color: #aaa;
+    padding: 10px 0;
+}
+
+.btn-accion {
+    background-color: rgb(238, 90, 11) !important;
+    border: none;
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-accion:hover {
+    background-color: #bf8446;
+}
+
+
+/********************************************************************
+/*** ESTILOS DE NUEVA PROPIEDAD     *********************************/
+
+#nueva-propiedad {
+    background-color: #e6e6e6;
+    padding: 20px;
+}
+
+#nueva-propiedad form,
+#actualizar-propiedad form {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+#nueva-propiedad label,
+#actualizar-propiedad label {
+    display: block;
+    width: 100%;
+    margin-bottom: 3px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#nueva-propiedad .fila-una-columna,
+#actualizar-propiedad .fila-una-columna {
+    width: 100%;
+    margin: 20px 0;
+}
+
+#nueva-propiedad .input-entrada-texto,
+#actualizar-propiedad .input-entrada-texto,
+#configuracion .input-entrada-texto {
+    width: 100%;
+    border: 1px solid #aaa;
+    background-color: #dedede;
+    padding: 10px;
+}
+
+#nueva-propiedad .fila,
+#actualizar-propiedad .fila {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0
+}
+
+#nueva-propiedad .fila .box,
+#actualizar-propiedad .fila .box {
+    width: 30%;
+}
+
+#nueva-propiedad .btn-fotos,
+#actualizar-propiedad .btn-fotos {
+    width: 200px;
+    background-color: rgb(6, 104, 81);
+    border-radius: 50px;
+    padding: 5px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+    text-align: center;
+}
+
+#nueva-propiedad .contenedor-foto-principal,
+#actualizar-propiedad .contenedor-foto-principal {
+    display: block;
+    max-width: 600px;
+    margin: 10px 0;
+}
+
+#nueva-propiedad .contenedor-foto-principal img,
+#actualizar-propiedad .contenedor-foto-principal img {
+    width: 100%;
+}
+
+#nueva-propiedad .contenedor-foto-galeria,
+#actualizar-propiedad .contenedor-foto-galeria {
+    display: inline-block;
+    max-width: 300px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#nueva-propiedad .foto-galeria,
+#actualizar-propiedad .foto-galeria {
+    width: 100%;
+}
+
+#nueva-propiedad hr {
+    margin-bottom: 20px;
+}
+
+
+/********************************************************************
+/*** LISTDO DE PROPIEDADES     *********************************/
+
+#listado-propiedades {
+    background-color: #e6e6e6;
+    padding: 20px;
+}
+
+#listado-propiedades .contenedor-tabla {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+#listado-propiedades table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#listado-propiedades table tr {
+    border: 1px solid #ccc;
+    font-size: 12px;
+    padding: 5px;
+}
+
+#listado-propiedades table td,
+th {
+    padding: 10px;
+}
+
+#listado-propiedades table th {
+    background-color: #c2c2c2;
+}
+
+#listado-propiedades table .form-acciones {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+#listado-propiedades table .form-acciones input {
+    border: none;
+    background-color: transparent;
+    color: #18ab84;
+    cursor: pointer;
+}
+
+#listado-propiedades table .btn-eliminar {
+    font-size: 14px;
+    text-decoration: none;
+    background-color: transparent;
+    color: #18ab84;
+    cursor: pointer;
+}
+
+#listado-propiedades table .btn-eliminar:hover {
+    text-decoration: underline;
+}
+
+#listado-propiedades table .form-acciones input:hover {
+    text-decoration: underline;
+}
+
+#listado-propiedades table {
+    width: 100%;
+    table-layout: auto !important;
+}
+
+#listado-propiedades table tr:nth-child(odd) {
+    background: #dedede;
+}
+
+
+/*los siguientes estilos pertenecen a la ventan modal que se abre cuando
+    se elimina una propiedad */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    color: #000;
+    font-size: 16px;
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 450px;
+    /* Could be more or less, depending on screen size */
+    text-align: center;
+}
+
+.modal-content button {
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    margin-top: -20px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/********************************************************************
+/***  DETALLE PROPIEDADES     *********************************/
+
+#detalle-propiedad {
+    background-color: #e6e6e6;
+    padding: 20px;
+}
+
+#detalle-propiedad .contenedor-tabla {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+#detalle-propiedad .descripcion {
+    width: 100%;
+    margin-top: 5px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+#detalle-propiedad .descripcion td {
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#detalle-propiedad .descripcion tr:nth-child(odd) {
+    background: #dedede;
+}
+
+#detalle-propiedad .descripcion tr td:nth-child(odd) {
+    width: 200px;
+    font-weight: bold;
+}
+
+#detalle-propiedad h3 {
+    margin-top: 20px;
+    color: #8e342a;
+}
+
+#detalle-propiedad .descripcion img {
+    max-width: 300px;
+}
+
+
+/********************************************************************
+/*** ACTUALIZAR PROPIEDAD     *********************************/
+
+
+/* para no repetir estilo se pusiero los selectores en la sección de nuevo propiedad */
+
+#actualizar-propiedad {
+    background-color: #e6e6e6;
+    padding: 20px;
+}
+
+#actualizar-propiedad hr {
+    margin-bottom: 20px;
+}
+
+#actualizar-propiedad .btn-cambiar-foto {
+    display: inline;
+    color: #18ab84;
+    cursor: pointer;
+    font-weight: normal;
+}
+
+#actualizar-propiedad .btn-cambiar-foto:hover {
+    text-decoration: underline;
+}
+
+#actualizar-propiedad #contenedor-fotos-nuevas .contenedor-foto-galeria {
+    display: inline-block;
+    max-width: 300px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#actualizar-propiedad #contenedor-fotos-nuevas .foto-galeria {
+    width: 100%;
+}
+
+
+/********************************************************************
+/*** NEUVO TIPO DE PROPIEDAD - NUEVO PAIS - NUEVA CIUDAD     *********************************/
+
+
+/*** ACTUALIZAR TIPO DE PROPIEDAD - ACTUALIZAR PAIS - ACTUALIZAR CIUDAD     *********************************/
+
+#nuevo-tipo-propiedad,
+#nuevo-pais,
+#nueva-ciudad {
+    background-color: #e6e6e6;
+    padding: 20px;
+}
+
+#nuevo-tipo-propiedad .box-nuevo-tipo,
+#nuevo-pais .box-nuevo-tipo,
+#nueva-ciudad .box-nuevo-tipo {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+#nuevo-tipo-propiedad h3,
+#nuevo-pais h3,
+#nueva-ciudad h3 {
+    font-weight: normal;
+}
+
+#nuevo-tipo-propiedad .box-nuevo-tipo form,
+#nuevo-pais .box-nuevo-tipo form,
+#nueva-ciudad .box-nuevo-tipo form {
+    max-width: 900px;
+    margin: auto;
+}
+
+#nuevo-tipo-propiedad .box-nuevo-tipo form input[type=text],
+#nuevo-pais .box-nuevo-tipo form input[type=text],
+#nueva-ciudad .box-nuevo-tipo form input[type=text] {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    padding: 10px;
+    margin: 25px 0;
+}
+
+#nuevo-tipo-propiedad hr,
+#nuevo-pais hr,
+#nueva-ciudad hr {
+    margin: 10px 0;
+}
+
+#nueva-ciudad select {
+    display: block;
+    width: 200px;
+    background-color: #fff;
+    padding: 10px;
+}
+
+
+/********************************************************************
+/*** LISTADO TIPO PROPIEDADES     *********************************/
+
+#listado-tipos-propiedades {
+    background-color: #e6e6e6;
+    padding: 20px;
+}
+
+#listado-tipos-propiedades .contenedor-tabla,
+#listado-paises .contenedor-tabla,
+#listado-ciudades .contenedor-tabla {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+#listado-paises {
+    background-color: #e6e6e6;
+    padding: 20px;
+}
+
+.listados {
+    margin-top: 20px;
+    border-collapse: collapse;
+    text-align: left;
+    width: 600px;
+    max-width: 600px;
+}
+
+.listados tr:nth-child(odd) {
+    background: #dedede;
+}
+
+.listados tr {
+    border: 1px solid #ccc;
+    font-size: 12px;
+    padding: 5px;
+}
+
+.listados td,
+th {
+    padding: 10px;
+}
+
+.listados th {
+    background-color: #c2c2c2;
+}
+
+.listados input {
+    border: none;
+    background-color: transparent;
+    color: #18ab84;
+    cursor: pointer;
+}
+
+.listados input:hover {
+    text-decoration: underline;
+}
+
+
+/********************************************************************
+/*** CONFIGURACION     *********************************/
+
+#configuracion {
+    background-color: #e6e6e6;
+    padding: 20px;
+}
+
+#configuracion .box-configuracion {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+#configuracion .box-configuracion h3 {
+    margin-bottom: 10px;
+}
+
+#configuracion .box-configuracion #personalizada .fila {
+    display: flex;
+    justify-content: space-between;
+}
+
+#configuracion .box-configuracion #personalizada .fila div {
+    width: 30%;
+    margin: 15px 0;
+}
+
+#configuracion label {
+    width: 100%;
+    display: block;
+}
+
+#configuracion .box-configuracion input[type="text"] {
+    margin-bottom: 15px;
+}
+
+#configuracion .box-configuracion #personalizada {
+    display: none;
+}
