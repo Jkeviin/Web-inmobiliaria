@@ -8,8 +8,7 @@ $result_propiedades = cargarPropiedades($limiteInferior);
 ?>
 
 <?php while ($propiedad = mysqli_fetch_assoc($result_propiedades)) : ?>
-
-    <div class="fila">
+    <div class="grid">
         <form action="publicacion.php" method="get" id="<?php echo $propiedad['id'] ?>">
             <input type="hidden" value="<?php echo $propiedad['id'] ?>" name="idPropiedad"> 
             <div class="contenedor-propiedad" onclick="document.getElementById('<?php echo $propiedad['id'] ?>').submit();">

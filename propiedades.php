@@ -19,9 +19,11 @@ $result_propiedades = cargarPropiedades($limInferior);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAWPI - Inmobiliaria</title>
+    <title>TANIA - Inmobiliaria</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="estilo.css">
+    <!-- Icono casa -->
+    <link rel="icon" href="img/casa.png">
 
     <script>
         function cargarMasPropiedades(str) {
@@ -82,6 +84,36 @@ $result_propiedades = cargarPropiedades($limInferior);
                             <input type="radio" value="venta" name="estado"> Venta
                         </span>
                     </div>
+                                        <!-- Busqueda por rango de precio -->
+                                        <div class="rango-precio">
+                        <p class="titulo-small">Precio</p>
+                        <span class="precio-minimo">
+                            <input type="number" name="precio_minimo" placeholder="Precio Mínimo">
+                        </span>
+                        <span class="precio-maximo">
+                            <input type="number" name="precio_maximo" placeholder="Precio Máximo">
+                        </span>
+                    </div>
+                                        <!-- Habitaciones -->
+                    <div class="habitaciones">
+                        <!-- Titulo small -->
+                        <p class="titulo-small">Habitaciones</p>
+                        <span>
+                            <input type="radio" value="1" name="habitaciones_b">1
+                        </span>
+                        <span>
+                            <input type="radio" value="2" name="habitaciones_b" checked> 2
+                        </span>
+                        <span>
+                            <input type="radio" value="3" name="habitaciones_b"> 3
+                        </span>
+                        <span>
+                            <input type="radio" value="4" name="habitaciones_b"> 4
+                        </span>
+                        <span>
+                            <input type="radio" value="5" name="habitaciones_b"> 5
+                        </span>
+                    </div>
 
                     <input type="submit" value="Buscar" name="buscar">
                 </form>
@@ -90,8 +122,8 @@ $result_propiedades = cargarPropiedades($limInferior);
         </div>
 
         <div class="contenedor-propiedades" id="contenedor-propiedades">
-            <?php while ($propiedad = mysqli_fetch_assoc($result_propiedades)) : ?>
-                <div class="fila">
+            <div class="grid">
+                <?php while ($propiedad = mysqli_fetch_assoc($result_propiedades)) : ?>
                     <form action="publicacion.php" method="get" id="<?php echo $propiedad['id'] ?>">
                         <input type="hidden" value="<?php echo $propiedad['id'] ?>" name="idPropiedad">
                         <div class="contenedor-propiedad" onclick="document.getElementById('<?php echo $propiedad['id'] ?>').submit();">
@@ -103,7 +135,7 @@ $result_propiedades = cargarPropiedades($limInferior);
                             </div>
                             <div class="info">
                                 <h2><?php echo $propiedad['titulo'] ?></h2>
-                                €</i><?php echo $propiedad['ubicacion'] ?></p>
+                                </i><?php echo $propiedad['ubicacion'] ?></p>
                                 <span class="precio">$ <?php echo number_format($propiedad['precio'],0,'','.') ?></span>
                                 <hr>
                                 <table>
@@ -121,78 +153,14 @@ $result_propiedades = cargarPropiedades($limInferior);
                             </div>
                         </div>
                     </form>
-
-                    <?php if ($propiedad = mysqli_fetch_assoc($result_propiedades)) : ?>
-                        <form action="publicacion.php" method="get" id="<?php echo $propiedad['id'] ?>">
-                            <input type="hidden" value="<?php echo $propiedad['id'] ?>" name="idPropiedad">
-                            <div class="contenedor-propiedad" onclick="document.getElementById('<?php echo $propiedad['id'] ?>').submit();">
-                                <div class="contenedor-img">
-                                    <img src="<?php echo 'admin/' . $propiedad['url_foto_principal'] ?>" alt="">
-                                    <div class="estado">
-                                        <?php echo $propiedad['estado'] ?>
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <h2><?php echo $propiedad['titulo'] ?></h2>
-                                    <p> <i class="fa-solid fa-location-pin"></i><?php echo $propiedad['ubicacion'] ?></p>
-                                    <span class="precio">$ <?php echo number_format($propiedad['precio'],0,'','.')?></span>
-                                    <hr>
-                                    <table>
-                                        <tr>
-                                            <th>Ambientes</th>
-                                            <th>Baños</th>
-                                            <th>Dimensiones</th>
-                                        </tr>
-                                        <tr>
-                                            <td><?php echo $propiedad['habitaciones'] ?></td>
-                                            <td><?php echo $propiedad['banios'] ?></td>
-                                            <td><?php echo $propiedad['dimensiones'] ?></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </form>
-                    <?php endif ?>
-
-                    <?php if ($propiedad = mysqli_fetch_assoc($result_propiedades)) : ?>
-                        <form action="publicacion.php" method="get" id="<?php echo $propiedad['id'] ?>">
-                            <input type="hidden" value="<?php echo $propiedad['id'] ?>" name="idPropiedad">
-                            <div class="contenedor-propiedad" onclick="document.getElementById('<?php echo $propiedad['id'] ?>').submit();">
-                                <div class="contenedor-img">
-                                    <img src="<?php echo 'admin/' . $propiedad['url_foto_principal'] ?>" alt="">
-                                    <div class="estado">
-                                        <?php echo $propiedad['estado'] ?>
-                                    </div>
-                                </div>
-                                <div class="info">
-                                    <h2><?php echo $propiedad['titulo'] ?></h2>
-                                    <p> <i class="fa-solid fa-location-pin"></i><?php echo $propiedad['ubicacion'] ?></p>
-                                    <span class="precio">$ <?php echo number_format($propiedad['precio'],0,'','.') ?></span>
-                                    <hr>
-                                    <table>
-                                        <tr>
-                                            <th>Ambientes</th>
-                                            <th>Baños</th>
-                                            <th>Dimensiones</th>
-                                        </tr>
-                                        <tr>
-                                            <td><?php echo $propiedad['habitaciones'] ?></td>
-                                            <td><?php echo $propiedad['banios'] ?></td>
-                                            <td><?php echo $propiedad['dimensiones'] ?></td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </div>
-                        </form>
-                    <?php endif ?>
-                </div>
-
-            <?php endwhile ?>
+                <?php endwhile ?>
+            </div>
         </div>
+        <div class="contenedor-propiedades" id="contenedor-propiedades">
 
         <button value="0" onclick="cargarMasPropiedades(this.value)" id="botonCargarMas"> Ver Más</button>
 
-    </div>
+        </div>
 
     <footer>
             <?php include("contenido-footer.php")?>

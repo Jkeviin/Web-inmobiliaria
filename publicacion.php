@@ -21,9 +21,11 @@ $restul_fotos_galeria = obtenerFotosGaleria($id_propiedad);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAWPI - Inmobiliaria</title>
+    <title>TANIA - Inmobiliaria</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="estilo.css">
+        <!-- Icono casa -->
+        <link rel="icon" href="img/casa.png">
 </head>
 
 <body class="page-publicacion">
@@ -53,7 +55,7 @@ $restul_fotos_galeria = obtenerFotosGaleria($id_propiedad);
                 </section>
                 <section class="descripcion">
                     <h3>Descripción</h3>
-                    <div class="fila">
+                    <div class="grid icon_publicacion ">
                         <div class="dato">
                             <span class="header">Tipo</span>
                             <span class="valor"><?php echo obtenerTipo($propiedad['tipo']) ?></span>
@@ -74,8 +76,6 @@ $restul_fotos_galeria = obtenerFotosGaleria($id_propiedad);
                             <span class="header">Baños</span>
                             <span class="valor"><?php echo $propiedad['banios'] ?></span>
                         </div>
-                    </div>
-                    <div class="fila">
                         <div class="dato">
                             <span class="header">Garage</span>
                             <span class="valor"><?php echo $propiedad['garage'] ?></span>
@@ -107,12 +107,12 @@ $restul_fotos_galeria = obtenerFotosGaleria($id_propiedad);
                     <div class="detalle"><?php echo $descripcion ?></div>
                 </section>
                 <section class="compartir">
-                    <h3>Compartir esta propiedad</h3>
-                    <a href="http://facebook.com/sharer.php?u=http://localhost/sapi/publicacion.php?idPublicacion=<?php echo $propiedad['id'] ?>" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <h3>Contacta a Tania</h3>
+                    <a href="https://www.facebook.com/taniapatricia.apontegarcia"></i></a>
 
                     <a href="tel:<?php echo $config['telefono1'] ?>"> <i class="fa-solid fa-phone"></i> </a>
 
-                    <a href="whatsapp://send?text=Buen día, vengo de la pagina web y estoy interesado en la siguiente propiedad: '<?php echo strtoupper($propiedad['titulo'])?>' http://localhost/web-inmobiliaria/publicacion.php?idPropiedad=<?php echo $propiedad['id']?>&phone=<?php echo $propiedad['telefono_propietario']?>" data-action="share/whatsapp/share"> <i class="fa-brands fa-whatsapp"></i> </a>
+                    <a href="whatsapp://send?text=Buen día, vengo de la pagina web y estoy interesado en la siguiente propiedad: '<?php echo strtoupper($propiedad['titulo'])?>': https://www.taniainmobiliaria.ga/publicacion.php?idPropiedad=<?php echo $propiedad['id']?>&phone=<?php echo $propiedad['telefono_propietario']?>" data-action="share/whatsapp/share"> <i class="fa-brands fa-whatsapp"></i> </a>
                 </section>
             </div>
             <div class="form-contacto-publicacion">
@@ -120,7 +120,7 @@ $restul_fotos_galeria = obtenerFotosGaleria($id_propiedad);
                     <h3>Comuníquese con nosotros</h3>
                     <div>
                         <label for="nombre">Nombre</label>
-                        <input type="text" placeholder="Ingrese su nombre" name="nombre" required>
+                        <input type="text" placeholder="Ingrese su nombre" name="nombre" required autocomplete=""off>
                     </div>
                     <div>
                         <label for="email">Dirección de Correo</label>

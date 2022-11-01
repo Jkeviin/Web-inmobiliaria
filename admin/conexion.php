@@ -1,9 +1,9 @@
 <?php
 //datos del servidor
-$server		="localhost";
-$username	="root";
-$password	="";
-$bd			="bd_inmobiliaria";
+$server		="sql207.epizy.com";
+$username	="epiz_32901060";
+$password	="qPccoOGJpnfwEk";
+$bd			="epiz_32901060_bd_inmobiliaria";
 
 //creamos una conexión
 $conn = mysqli_connect($server, $username, $password, $bd);

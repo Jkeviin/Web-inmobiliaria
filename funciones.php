@@ -110,6 +110,7 @@ function obtenerPais($id_pais)
     //Ejecutamos la consulta
     $resultado_pais = mysqli_query($conn, $query);
     $row = mysqli_fetch_assoc($resultado_pais);
+    
     return $row['nombre_pais'];
 }
 
@@ -120,6 +121,7 @@ function obtenerFotosGaleria($id_propiedad)
 
     //Ejecutamos la consulta
     $resultado_fotos = mysqli_query($conn, $query);
+
     return $resultado_fotos;
 }
 
@@ -138,29 +140,17 @@ function obtenerTipo($id_tipo)
     }
 }
 
-function realizarBusqueda($id_ciudad, $id_tipo, $estado){
+function realizarBusqueda($id_ciudad, $id_tipo, $estado, $precio_minimo, $precio_maximo, $habitaciones_b) {
     include("admin/conexion.php");
-    if($id_ciudad!=="" and $id_tipo!== "" and $estado!=="" ){
-        $query = "SELECT * FROM propiedades WHERE ciudad='$id_ciudad' and tipo='$id_tipo' and estado='$estado'";
-    }
-    else if($id_ciudad!=="" and $id_tipo!== "" and $estado===""){
-        $query = "SELECT * FROM propiedades WHERE ciudad='$id_ciudad' and tipo='$id_tipo'";
-    }
-    else if($id_tipo!== "" and $estado!=="" ){
-        $query = "SELECT * FROM propiedades WHERE tipo='$id_tipo' and estado='$estado'";
-    }
-    else if($id_ciudad!=="" and $estado!=="" ){
-        $query = "SELECT * FROM propiedades WHERE ciudad='$id_ciudad' and estado='$estado'";
-    }
-    else if($id_ciudad!==""){
-        $query = "SELECT * FROM propiedades WHERE ciudad='$id_ciudad'";
-    }
-    else if($id_tipo!== ""){
-        $query = "SELECT * FROM propiedades WHERE tipo='$id_tipo'";
-    }
-    else if($estado!=="" ){
-        $query = "SELECT * FROM propiedades WHERE estado='$estado'";
-    }
+
+    $id_ciudad !== "" ? $id_ciudad = "AND ciudad='$id_ciudad'" : $id_ciudad = "";
+    $id_tipo !== "" ? $id_tipo = "AND tipo='$id_tipo'" : $id_tipo = "";
+    $estado !== "" ? $estado = "AND estado='$estado'" : $estado = "";
+    $precio_minimo !== "" ? $precio_minimo = "AND precio>='$precio_minimo'" : $precio_minimo = "";
+    $precio_maximo !== "" ? $precio_maximo = "AND precio<='$precio_maximo'" : $precio_maximo = "";
+    $habitaciones_b !== "" ? $habitaciones_b = "AND habitaciones>='$habitaciones_b'" : $habitaciones_b = "";
+
+    $query = "SELECT * FROM propiedades WHERE 1=1 $id_ciudad $id_tipo $estado $precio_minimo $precio_maximo $habitaciones_b";
 
     //Ejecutamos la consulta
     $resultado_propiedades = mysqli_query($conn, $query);

@@ -57,3 +57,4 @@ function anterior() {
     document.getElementById("fotoModal").src = fotosGaleria[index_foto_actual].src;
 
 }
+

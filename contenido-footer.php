@@ -1,2 +1,1 @@
-SAWPI Inmobiliaria 2022 <br>
-<?php echo $config['telefono1'] . " - " . $config['email_contacto'] ?>
+Tania Inmobiliaria 2022 - Desarrollador Web (Kevin Ortega) <br>
